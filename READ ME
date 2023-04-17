@@ -1,0 +1,20 @@
+import expres từ tập tin expres.
+
+configviewEngine là thể hiện ra ngoài cho browser xem.
+sử dụng câu truyền lênh cho configviewEnginel.
+
+
+
+các lệnh npm i dotenv bodymon @babel/core expres...... là các package áp dụng trong sever
+trong đó có các phiên bản package 
+
+sever.js là trang chủ 
+
+public : là static files trong nodejs. files động người xem có thể xem và thao tác được 
+với đường dẫn :
+app.use(express.static('./src/public'));
+
+
+
+wed.js : viết route cho all trang wed. nơi mà dãn đến các trang khác của 1 trang wed
+./route/wed ; đường truyền dẫn
