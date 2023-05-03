@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>NODE JS</title>
+    <style>
+        .upload_file_container{
+            display: flex;
+
+        }
+        .upload_file_container div img{
+           
+            display: flex;
+
+        }
+        /* .upload_file_container input{
+            display: inline-block;
+            margin: 0 10px;  */
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="/">Home</a>
+      <a href="/upload" class="active"  >Upload File</a>
+    </div>
+    <div>
+        <div class="upload_file_container">
+
+            <form method="POST" action="/upload-profile-pic" enctype="multipart/form-data">
+                <div>
+                    <label>Select your profile picture:</label>
+                    <input type="file" name="profile_pic" />
+
+                </div>
+                <div>
+                    <input type="submit" name="btn_upload_profile_pic" value="Upload" />
+                </div>
+            </form>
+
+
+            <form method="POST" action="/upload-multiple-images" enctype="multipart/form-data">
+                <div>
+                    <label>Select multiple images:</label>
+                    <input type="file" name="multiple_images" multiple />
+                </div>
+                <div>
+                    <input type="submit" name="btn_upload_multiple_images" value="Upload" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+  </body>
+</html>

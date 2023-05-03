@@ -18,3 +18,11 @@ app.use(express.static('./src/public'));
 
 wed.js : viết route cho all trang wed. nơi mà dãn đến các trang khác của 1 trang wed
 ./route/wed ; đường truyền dẫn
+
+
+
+lấy thông tin về thì dùng    .get    (method get).
+ .post  thêm mới data vào database 
+
+ khái niệm : CRUD   => create/read/update/delete
+                       POST / GET /  PUT / DELETE

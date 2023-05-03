@@ -1,14 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1> hello World on Nodejs</h1>
-    <img src="/image/girl AI 4.jpg" alt="">
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>NODE JS</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="active" href="/">Home</a>
+      <a href="/upload">Upload File</a>
+    </div>
+    <div>
+      <h2>List user :</h2>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Lats_name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+        <tbody>
+          <!-- lặp từng phần tử trong 1 mảng tên data với vòng lặp i .-->
+          <!-- <%  %>  ejs thì  cấu trúc in ra ngoài thì đóng và mở đầu và cuối  . nếu sử dụng hàm-->
+          <% for(let i=0; i < data.length; i++) { %>
+          <tr>
+            <td><%= data[i].id %></td>
+            <td><%= data[i].lats_name %></td>
+            <td><%= data[i].last_name %></td>
+            <td><%= data[i].email %></td>
+
+            <!-- tạo 3 nút nhấn -->
+            <td class="but_container">
+
+              <a href="/detail/user/<%= data[i].id%>" target="_blank" class="but">DETAIL</a>
+
+              <form action="/Edit_user/<%= data[i].id%>" method="get" class="but">
+                <button type="submit" class="but">Edit</button>
+              </form>
+              
+              <form action="/delete_user" method="post" class="but">
+                  <input  name="userIIDD" value="<%= data[i].id%>" type="text" hidden/>
+                  <button type="submit">Delete</button>
+              </form>
+
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <div class="create_user">
+        <form action="/create_user_data" , method="post">
+          <!-- action hoạt động như 1 thẻ a khi có submit phía dưới -->
+          <div>
+            <span> Create first name :</span>
+            <input type="text" name="firstnameNEW"/>
+          </div>
+          <div>
+            <span> Create Last name :</span>
+            <input type="text" name="lastnameNEW"/>
+          </div>
+          <div>
+            <span> Email :</span>
+            <input type="email" name="emailNEW"/>
+          </div>
+          <div>
+            <!-- type submit  thực hiện 1 action cho from -->
+            <button type="submit" class="btnSummit">Summit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update-user</title>
+    <style> 
+        input[type=text] {
+          width: 100%;
+          padding: 4px 10px;
+          margin: 2px 0;
+          box-sizing: border-box;
+        }
+        input[type=email] {
+          width: 100%;
+          padding: 4px 10px;
+          margin: 2px 0;
+          box-sizing: border-box;
+        }
+
+        .Edit_class{
+            padding-top: 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh; /* hoặc giá trị chiều cao phù hợp */
+        }
+
+        
+        </style>
+</head>
+<body>
+    <form action="/update-user" method="post" class="Edit_class">
+        <div>
+            <span> First name :</span>
+            <input type="text" name="firstnameEdit" value="<%= EditUser.lats_name%>"/>
+          </div>
+          <div>
+            <span> Last name :</span>
+            <input type="text" name="lastnameEdit" value="<%= EditUser.last_name%>"/>
+          </div>
+          <div>
+            <span> Email :</span>
+            <input type="email" name="emailEdit" value="<%= EditUser.email%>"/>
+          </div>
+          <input  name="id" value="<%= EditUser.id%>" type="text" hidden/>
+          <div>
+            <button type="submit" class="btn">SAVE</button>
+          </div>
+    </form>
+
+</body>
+</html>
